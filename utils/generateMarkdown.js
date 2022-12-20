@@ -45,7 +45,7 @@ function generateMarkdown(data) {
   
   ## Questions
   
-  If you have any questions about this project, please feel free to email me at ${data.email} or on Github at https://www.github.com/${data.gitHub}. I will do my best to get back to you as soon as possible!
+  If you have any questions about this project, please feel free to email me at ${data.email} or on Github at https://www.github.com/ ${data.github}. I will do my best to get back to you as soon as possible!
 
   ## License
 
