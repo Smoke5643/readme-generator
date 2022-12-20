@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require ('./assets/javascript/generateMarkdown.js');
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -85,7 +85,7 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'Please enter the tests for your application and use cases:',
+        message: 'Please enter the tests performed on your application and use cases:',
         validate: testsInput => {
             if (testsInput){
                 return true;
@@ -94,6 +94,38 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Please enter your GitHub user name:',
+        validate: githubInput => {
+            if (githubInput){
+                return true;
+            }else {
+                console.log('Please enter your GitHub username so users can see more of your work!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please enter your email address:',
+        validate: emailInput => {
+            if (emailInput){
+                return true;
+            }else {
+                console.log('Please enter your email address for questions users may have about your application!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'confirm',
+        name: 'licenses',
+        message: 'Would you like to include a license?',
+        default: false
     },
 
 ];
