@@ -19,7 +19,7 @@ function generateMarkdown(data) {
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contribution](#contribution)
-  - [Test Information](#tests)
+  - [Test Information](#test-information)
   - [Questions](#questions)
   - [License](#license)
   
@@ -49,7 +49,7 @@ function generateMarkdown(data) {
 
   ## License
 
-  I used the ${data.licenses} for this project.
+  I used the ${data.licenses} license(s) for this project.
 `;
 }
 
