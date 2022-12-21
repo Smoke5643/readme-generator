@@ -42,5 +42,5 @@ function generateMarkdown(data) {
   I used the ${data.license} license(s) for this project.
 `;
 }
-
+// Export the function to be used by index.js
 module.exports = generateMarkdown;
