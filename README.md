@@ -11,7 +11,7 @@
   - [Questions](#questions)
   - [License](#license)
   - [Visuals](#visuals)
-  - [Link to Generated README](#Link-to-Generated-README)
+  - [Link to Generated README](#link-to-generated-readme)
   
   ## Description of project
   
@@ -48,4 +48,5 @@ Preview of README Generator:
 https://drive.google.com/file/d/1qt8urfTQpD5Wz0RfOrG-QTGhV9OQ2GJR/view?usp=share_link
 
 ## Link to Generated README
+
 [Generated README](./NewREADME.md)
