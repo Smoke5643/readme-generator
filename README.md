@@ -44,3 +44,6 @@
 Preview of README Generator:
 
 https://drive.google.com/file/d/1qt8urfTQpD5Wz0RfOrG-QTGhV9OQ2GJR/view?usp=share_link
+
+## Link to Generated README
+[Generated README](./NewREADME.md)
