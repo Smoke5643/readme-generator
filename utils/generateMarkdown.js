@@ -1,18 +1,8 @@
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
-// function renderLicenseBadge(license) {}
-
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
-// function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
+//Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
+  [![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
 
   ## Table of Contents
   - [Description](#description-of-project)
@@ -45,11 +35,11 @@ function generateMarkdown(data) {
   
   ## Questions
   
-  If you have any questions about this project, please feel free to email me at ${data.email} or on Github at https://www.github.com/ ${data.github}. I will do my best to get back to you as soon as possible!
+  If you have any questions about this project, please feel free to email me at ${data.email} or on Github at https://www.github.com/${data.github}. I will do my best to get back to you as soon as possible!
 
   ## License
 
-  I used the ${data.licenses} license(s) for this project.
+  I used the ${data.license} license(s) for this project.
 `;
 }
 

@@ -1,7 +1,7 @@
 // Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require ('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // Array of questions for user input
 const questions = [
@@ -10,9 +10,9 @@ const questions = [
         name: 'name',
         message: 'This is a README generator. Please enter your full name:',
         validate: nameInput => {
-            if (nameInput){
+            if (nameInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please enter your name to give credit to you work!')
                 return false;
             }
@@ -23,9 +23,9 @@ const questions = [
         name: 'title',
         message: 'Please enter the title of your application:',
         validate: titleInput => {
-            if (titleInput){
+            if (titleInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please enter the title of your application!')
                 return false;
             }
@@ -36,9 +36,9 @@ const questions = [
         name: 'description',
         message: 'Please enter a detailed description of your application:',
         validate: descriptionInput => {
-            if (descriptionInput){
+            if (descriptionInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please enter a description for your application!')
                 return false;
             }
@@ -49,9 +49,9 @@ const questions = [
         name: 'instructions',
         message: 'Please enter instructions for the user to install:',
         validate: instructionsInput => {
-            if (instructionsInput){
+            if (instructionsInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please include installation instructions and all software or dependencies needed to use your application!')
                 return false;
             }
@@ -62,9 +62,9 @@ const questions = [
         name: 'usage',
         message: 'Please enter usage information:',
         validate: usageInput => {
-            if (usageInput){
+            if (usageInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please tell the user any relevant information to use your application!')
                 return false;
             }
@@ -75,9 +75,9 @@ const questions = [
         name: 'contribution',
         message: 'Please enter how others can contribute to this project:',
         validate: contributionInput => {
-            if (contributionInput){
+            if (contributionInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please give users information on how to contribute to your project!')
                 return false;
             }
@@ -88,9 +88,9 @@ const questions = [
         name: 'tests',
         message: 'Please enter the tests performed on your application and use cases:',
         validate: testsInput => {
-            if (testsInput){
+            if (testsInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please enter some testing information for the user!')
                 return false;
             }
@@ -101,9 +101,9 @@ const questions = [
         name: 'github',
         message: 'Please enter your GitHub user name:',
         validate: githubInput => {
-            if (githubInput){
+            if (githubInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please enter your GitHub username so users can see more of your work!')
                 return false;
             }
@@ -114,19 +114,19 @@ const questions = [
         name: 'email',
         message: 'Please enter your email address:',
         validate: emailInput => {
-            if (emailInput){
+            if (emailInput) {
                 return true;
-            }else {
+            } else {
                 console.log('Please enter your email address for questions users may have about your application!')
                 return false;
             }
         }
     },
     {
-        type: 'checkbox',
-        name: 'licenses',
-        message: 'Which licenses would you like to include for your application?',
-        choices: ['MIT', 'Apache', 'Eclipse', 'Mozilla'],
+        type: 'list',
+        name: 'license',
+        message: 'Which license would you like to include for your application?',
+        choices: ['MIT', 'Apache License 2.0', 'Eclipse Public License Version 2.0', 'Mozilla Public License 2.0'],
         default: 'MIT',
     },
 
@@ -136,8 +136,8 @@ const questions = [
 function writeToFile(data) {
     try {
         fs.writeFileSync('NewREADME.md', data);
-        console.log('Success!')    
-    } catch(err){
+        console.log('Success!')
+    } catch (err) {
         console.log(err);
     }
 }
@@ -147,14 +147,14 @@ function writeToFile(data) {
 // A function to initialize app
 function init() {
     return inquirer.prompt(questions)
-    
+
 }
 
 // Function call to initialize app
 init()
-.then(answers => {
-    return generateMarkdown(answers);
-})
-.then(readme => {
-    return writeToFile(readme);
-});
+    .then(answers => {
+        return generateMarkdown(answers);
+    })
+    .then(readme => {
+        return writeToFile(readme);
+    });
