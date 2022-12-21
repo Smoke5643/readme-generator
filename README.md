@@ -10,6 +10,8 @@
   - [Test Information](#test-information)
   - [Questions](#questions)
   - [License](#license)
+  - [Visuals](#visuals)
+  - [Link to Generated README](#Link-to-Generated-README)
   
   ## Description of project
   
